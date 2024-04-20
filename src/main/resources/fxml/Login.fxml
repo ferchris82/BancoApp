@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../estilos/login.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bancoApp.controladores.ControladorLogin">
-   <children>
-      <VBox prefHeight="400.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-   </children>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../estilos/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bancoApp.controladores.ControladorLogin">
+   <VBox prefHeight="400.0" prefWidth="200.0" styleClass="login_logo_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <FontAwesomeIconView fill="#ecf39e" glyphName="BANK" size="30" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BancoApp" />
+   </VBox>
+   <VBox layoutX="240.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0" styleClass="login_form_container" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Label id="choice-prompt-text" text="Elige Tu Tipo De Cuenta" />
+      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" styleClass="account_selector" />
+      <Label fx:id="payee_address_lbl" text="Dirección del beneficiario:" />
+      <TextField fx:id="payee_address_fld" styleClass="input_field" />
+      <Label text="Contraseña:" />
+      <TextField fx:id="password_fld" styleClass="input_field" />
+      <Button fx:id="login_btn" mnemonicParsing="false" text="Button" />
+      <Label fx:id="error_lbl" styleClass="error_lbl" text="Error:" />
+   </VBox>
 </AnchorPane>
