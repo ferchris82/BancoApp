@@ -1,4 +1,4 @@
 package bancoApp.controladores.cliente;
 
-public class ControladorCliente {
+public class DashboardControlador {
 }
