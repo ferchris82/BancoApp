@@ -62,3 +62,36 @@
 .alt_menu_btn FontAwesomeIconView {
     -fx-fill: #FFFFFF;
 }
+
+/*  Report Bug/Suggestion */
+.report_container {
+    -fx-background-color: #EEEEEE;
+    -fx-background-radius: 10;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-padding: 10 0 10 0;
+}
+
+.report_container Text{
+    -fx-font-weight: bold;
+    -fx-fill:#132A13
+}
+
+.report_container Label{
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.report_container Button{
+    -fx-pref-width: 80;
+    -fx-background-color: #132A13;
+    -fx-text-fill:#FFFFFF;
+}
+
+.report_container Button:hover {
+    -fx-cursor: hand;
+}
+.report_container Button FontAwesomeIconView{
+    -fx-fill: #FFFFFF;
+}
+

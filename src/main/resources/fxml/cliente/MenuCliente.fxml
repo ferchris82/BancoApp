@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Text?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../estilos/MenuCliente.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="730.0" prefWidth="160.0">
+      <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
          <children>
-            <VBox prefHeight="80.0" prefWidth="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <FontAwesomeIconView glyphName="BANK" size="30" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Banco App" />
                </children>
             </VBox>
-            <VBox prefHeight="400.0" prefWidth="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+            <VBox prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <Button mnemonicParsing="false" text="Cuadro de Mando">
+                  <Button mnemonicParsing="false" prefWidth="152.0" text="Cuadro de Mando">
                      <graphic>
                         <FontAwesomeIconView glyphName="HOME" size="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Transacciones">
+                  <Button mnemonicParsing="false" text="Transaccion">
                      <graphic>
                         <FontAwesomeIconView glyphName="HANDSHAKE_ALT" size="20" />
                      </graphic>
@@ -37,21 +34,21 @@
                      </graphic>
                   </Button>
                   <Line endX="120.0" />
-                  <Button mnemonicParsing="false" text="Perfil">
+                  <Button mnemonicParsing="false" styleClass="alt_menu_btn" text="Perfil">
                      <graphic>
                         <FontAwesomeIconView glyphName="USER" size="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" text="Salir">
+                  <Button mnemonicParsing="false" styleClass="alt_menu_btn" text="Salir">
                      <graphic>
                         <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
                      </graphic>
                   </Button>
                </children>
             </VBox>
-            <VBox prefHeight="120.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+            <VBox prefHeight="120.0" prefWidth="130.0" styleClass="report_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Reporte de daño?" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sugerencia de informe/Daño?" />
                   <Label text="Use esto para reportar cualquier daño" />
                   <Button mnemonicParsing="false" text="Reportar">
                      <graphic>
