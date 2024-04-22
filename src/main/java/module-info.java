@@ -4,6 +4,7 @@ module BancoApp {
     requires de.jensd.fx.glyphs.fontawesome;
     requires java.sql;
     requires org.xerial.sqlitejdbc;
+    requires javafx.graphics;
 
     opens bancoApp to javafx.fxml;
     exports bancoApp;

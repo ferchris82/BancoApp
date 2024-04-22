@@ -44,7 +44,7 @@
     -fx-font-size: 1.5em;
 }
 
-.account FontAwesomeIcon{
+.account FontAwesomeIconView{
     -fx-fill: #FFFFFF;
 }
 
