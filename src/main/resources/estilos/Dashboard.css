@@ -44,7 +44,7 @@
     -fx-font-size: 1.5em;
 }
 
-.account FontAwesomeIconView{
+.account FontAwesomeIcon{
     -fx-fill: #FFFFFF;
 }
 
@@ -101,5 +101,48 @@
 /* Transactions View */
 .transaction_listview{
     -fx-background-color: #EEEEEE;
+    -fx-border-width: 0 0 0 0;
+    -fx-border-color: #AAAAAA;
+}
+
+.transaction_listview .scroll-bar:vertircal{
+    -fx-scale-x:0;
+}
+
+.list-cell{
+    -fx-background-color: #EEEEEE;
+    -fx-padding: 15 0 5 0;
+}
+
+/* Send Money View*/
+.new_trans_container{
+    -fx-background-color: #EEEEEE;
+    -fx-padding: 20 10 20 10;
+    -fx-spacing: 10;
+    -fx-alignment: center_left;
+}
+
+.new_trans_container Label{
+    -fx-font-family: "Calibri Light";
+    fx-font-size: 1.3em;
+}
+
+.new_trans_container TextField{
+    -fx-pref-height: 40;
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+}
+
+.new_trans_container Button{
+    -fx-background-color: linear-gradient(to right, #132A13, #253F25);
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-pref-width: 230;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+}
+
+.new_trans_container Button:hover{
+    -fx-cursor: hand;
 }
 
