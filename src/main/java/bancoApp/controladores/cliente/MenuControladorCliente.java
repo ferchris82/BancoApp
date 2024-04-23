@@ -25,6 +25,7 @@ public class MenuControladorCliente implements Initializable {
     private void addListener(){
         dashboard_btn.setOnAction( event-> onDashboard());
         transaction_btn.setOnAction(event -> onTransactions());
+        accounts_btn.setOnAction(event -> onAccounts());
     }
 
     private void onDashboard(){
@@ -33,5 +34,9 @@ public class MenuControladorCliente implements Initializable {
 
     private void onTransactions(){
         Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Transacciones");
+    }
+
+    private void onAccounts(){
+        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Cuentas");
     }
 }

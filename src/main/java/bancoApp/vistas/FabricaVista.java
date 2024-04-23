@@ -14,10 +14,15 @@ public class FabricaVista {
     private final StringProperty clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
+    private AnchorPane accountsView;
 
     public FabricaVista(){
         this.clientSelectedMenuItem = new SimpleStringProperty("");
     }
+
+    /* 
+     * Client Views Section
+     */
 
     public StringProperty getClientSelectedMenuItem(){
         return clientSelectedMenuItem;
@@ -43,6 +48,17 @@ public class FabricaVista {
             }
         }
         return transactionsView;
+    }
+
+    public AnchorPane getAccountsView(){
+        if (accountsView == null) {
+            try {
+                accountsView = new FXMLLoader(getClass().getResource("/fxml/cliente/Cuentas.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return accountsView;
     }
 
     public void showLoginWindow(){

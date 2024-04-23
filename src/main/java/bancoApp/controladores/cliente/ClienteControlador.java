@@ -15,6 +15,7 @@ public class ClienteControlador implements Initializable{
         Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().addListener((observableValue, oldVal, newVal) ->{
             switch (newVal) {
                 case "Transacciones" -> client_parent.setCenter(Modelo.getInstance().getFabricaVista().getTransactionsView());
+                case "Cuentas" -> client_parent.setCenter(Modelo.getInstance().getFabricaVista().getAccountsView());
                 default -> client_parent.setCenter(Modelo.getInstance().getFabricaVista().getDashboardView());         
             }
         });
