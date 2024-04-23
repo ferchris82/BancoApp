@@ -2,6 +2,8 @@ package bancoApp.vistas;
 
 import bancoApp.controladores.cliente.ClienteControlador;
 import bancoApp.controladores.cliente.TransaccionesControlador;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -9,10 +11,17 @@ import javafx.stage.Stage;
 
 public class FabricaVista {
     // Vista de clientes
+    private final StringProperty clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
 
-    public FabricaVista(){}
+    public FabricaVista(){
+        this.clientSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    public StringProperty getClientSelectedMenuItem(){
+        return clientSelectedMenuItem;
+    }
 
     public AnchorPane getDashboardView(){
         if(dashboardView == null){

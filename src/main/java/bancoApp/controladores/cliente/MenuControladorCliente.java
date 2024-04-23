@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import bancoApp.modelos.Modelo;
+
 public class MenuControladorCliente implements Initializable {
 
     public Button dashboard_btn;
@@ -17,6 +19,19 @@ public class MenuControladorCliente implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        
+        addListener();
+    }
+
+    private void addListener(){
+        dashboard_btn.setOnAction( event-> onDashboard());
+        transaction_btn.setOnAction(event -> onTransactions());
+    }
+
+    private void onDashboard(){
+        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Dashboard");
+    }
+
+    private void onTransactions(){
+        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Transacciones");
     }
 }
