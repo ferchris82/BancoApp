@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ControladorLogin implements Initializable {
     public ChoiceBox acc_selector;
@@ -22,5 +23,11 @@ public class ControladorLogin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         login_btn.setOnAction(event -> Modelo.getInstance().getFabricaVista().showClientWindow());
+    }
+
+    private void onLogin(){
+        Stage stage = (Stage) error_lbl.getScene().getWindow();
+        Modelo.getInstance().getFabricaVista().closeStage(stage);
+        Modelo.getInstance().getFabricaVista().showClientWindow();
     }
 }

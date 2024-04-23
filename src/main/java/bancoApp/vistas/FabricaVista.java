@@ -1,6 +1,7 @@
 package bancoApp.vistas;
 
 import bancoApp.controladores.cliente.ClienteControlador;
+import bancoApp.controladores.cliente.TransaccionesControlador;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -9,6 +10,7 @@ import javafx.stage.Stage;
 public class FabricaVista {
     // Vista de clientes
     private AnchorPane dashboardView;
+    private AnchorPane transactionsView;
 
     public FabricaVista(){}
 
@@ -22,6 +24,18 @@ public class FabricaVista {
         } 
         return dashboardView;
     }
+
+    public AnchorPane getTransactionsView(){
+        if (transactionsView == null) {
+            try {
+                transactionsView = new FXMLLoader(getClass().getResource("/fxml/cliente/Transacciones.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return transactionsView;
+    }
+
     public void showLoginWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
         createStage(loader);
@@ -46,5 +60,10 @@ public class FabricaVista {
         stage.setScene(scene);
         stage.setTitle("Banco App");
         stage.show();
+    }
+
+    public void closeStage(Stage stage){
+        stage.close();
+
     }
 }
