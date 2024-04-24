@@ -3,34 +3,43 @@ package bancoApp.vistas;
 import bancoApp.controladores.admin.ControladorAdministrador;
 import bancoApp.controladores.cliente.ClienteControlador;
 import bancoApp.controladores.cliente.TransaccionesControlador;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class FabricaVista {
+    private TipoDeCuenta loginAccountType;
     // Vista de clientes
-    private final StringProperty clientSelectedMenuItem;
+    private final ObjectProperty<MenuOpcionesCliente> clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
 
     // Vista de administrador
-    private final StringProperty adminSelectedMenuItem;
+    private final ObjectProperty<MenuOpcionesAdmin> adminSelectedMenuItem;
     private AnchorPane createClientView;
 
     public FabricaVista(){
-        this.clientSelectedMenuItem = new SimpleStringProperty("");
-        this.adminSelectedMenuItem = new SimpleStringProperty("");
+        this.loginAccountType = TipoDeCuenta.CLIENTE;
+        this.clientSelectedMenuItem = new SimpleObjectProperty<>();
+        this.adminSelectedMenuItem = new SimpleObjectProperty<>();
+    }
+
+    public TipoDeCuenta getLoginAccountType(){
+        return loginAccountType;
+    }
+    public void setLoginAccountType(TipoDeCuenta loginAccountType){
+        this.loginAccountType = loginAccountType;
     }
 
     /* 
      * Client Views Section
      */
-
-    public StringProperty getClientSelectedMenuItem(){
+    public ObjectProperty<MenuOpcionesCliente>getClientSelectedMenuItem(){
         return clientSelectedMenuItem;
     }
 
@@ -70,7 +79,7 @@ public class FabricaVista {
     /* 
      * Vista de administrador
      */
-    public StringProperty getAdminSelectedMenuItem(){
+    public ObjectProperty<MenuOpcionesAdmin> getAdminSelectedMenuItem(){
         return adminSelectedMenuItem;
     }
 

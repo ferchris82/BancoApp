@@ -5,6 +5,9 @@ import java.util.ResourceBundle;
 
 
 import bancoApp.modelos.Modelo;
+import bancoApp.vistas.TipoDeCuenta;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -13,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ControladorLogin implements Initializable {
-    public ChoiceBox acc_selector;
+    public ChoiceBox<TipoDeCuenta> acc_selector;
     public Label payee_address_lbl;
     public TextField payee_address_fld;
     public TextField password_fld;
@@ -22,12 +25,19 @@ public class ControladorLogin implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        login_btn.setOnAction(event -> Modelo.getInstance().getFabricaVista().showClientWindow());
+        acc_selector.setItems(FXCollections.observableArrayList(TipoDeCuenta.CLIENTE, TipoDeCuenta.ADMIN));
+        acc_selector.setValue(Modelo.getInstance().getFabricaVista().getLoginAccountType());
+        acc_selector.valueProperty().addListener(observable -> Modelo.getInstance().getFabricaVista().setLoginAccountType(acc_selector.getValue()));
+        login_btn.setOnAction(event -> onLogin());
     }
 
     private void onLogin(){
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         Modelo.getInstance().getFabricaVista().closeStage(stage);
-        Modelo.getInstance().getFabricaVista().showClientWindow();
+        if (Modelo.getInstance().getFabricaVista().getLoginAccountType() == TipoDeCuenta.CLIENTE){
+            Modelo.getInstance().getFabricaVista().showClientWindow();;
+        } else {
+            Modelo.getInstance().getFabricaVista().showAdminWindow();
+        }
     }
 }

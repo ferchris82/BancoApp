@@ -1,5 +1,6 @@
 package bancoApp.controladores.cliente;
 
+import bancoApp.vistas.MenuOpcionesCliente;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
@@ -29,14 +30,14 @@ public class MenuControladorCliente implements Initializable {
     }
 
     private void onDashboard(){
-        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Dashboard");
+        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set(MenuOpcionesCliente.DASHBOARD);
     }
 
     private void onTransactions(){
-        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Transacciones");
+        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set(MenuOpcionesCliente.TRANSACCIONES);
     }
 
     private void onAccounts(){
-        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set("Cuentas");
+        Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set(MenuOpcionesCliente.CUENTAS);
     }
 }
