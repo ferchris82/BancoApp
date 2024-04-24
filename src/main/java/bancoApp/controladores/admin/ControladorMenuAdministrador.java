@@ -1,5 +1,6 @@
 package bancoApp.controladores.admin;
 
+import bancoApp.modelos.Modelo;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
@@ -16,4 +17,12 @@ public class ControladorMenuAdministrador implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         
     }
+
+    private void addListeners(){}
+
+    private void onCreateClient(){
+        Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().set("CrearCliente");
+    }
+
+
 }

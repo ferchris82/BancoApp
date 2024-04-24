@@ -18,10 +18,12 @@ public class FabricaVista {
     private AnchorPane accountsView;
 
     // Vista de administrador
+    private final StringProperty adminSelectedMenuItem;
     private AnchorPane createClientView;
 
     public FabricaVista(){
         this.clientSelectedMenuItem = new SimpleStringProperty("");
+        this.adminSelectedMenuItem = new SimpleStringProperty("");
     }
 
     /* 
@@ -64,7 +66,25 @@ public class FabricaVista {
         }
         return accountsView;
     }
-    /*  */
+
+    /* 
+     * Vista de administrador
+     */
+    public StringProperty getAdminSelectedMenuItem(){
+        return adminSelectedMenuItem;
+    }
+
+    public AnchorPane getCreateClientView(){
+        if (createClientView == null) {
+            try {
+                createClientView = new FXMLLoader(getClass().getResource("/fxml/admin/CrearCliente.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return createClientView;
+    } 
+
     public void showAdminWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin/Admin.fxml"));
         ControladorAdministrador controller = new ControladorAdministrador();
@@ -84,8 +104,7 @@ public class FabricaVista {
         createStage(loader);
         
     }
-    
-    
+
     private void createStage(FXMLLoader loader){
         Scene scene = null;
         try {
