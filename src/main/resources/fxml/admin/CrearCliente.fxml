@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="create_client_container"
+            stylesheets="@../../estilos/CrearCliente.css" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="bancoApp.controladores.admin.ControladorCrearCliente">
+   <Text layoutX="31.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Nueva Cuenta de Cliente"
+         AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0"/>
+   <VBox fillWidth="false" layoutX="14.0" layoutY="44.0" prefHeight="700.0" prefWidth="600.0"
+         AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:"/>
+      <TextField fx:id="fName_fld"/>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido:"/>
+      <TextField fx:id="lName_fld"/>
+      <Text layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:"/>
+      <TextField fx:id="password_fld" layoutX="10.0" layoutY="71.0"/>
+      <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="Dirección del Beneficiario:"/>
+      <CheckBox fx:id="pAddress_box" mnemonicParsing="false"/>
+      <Label fx:id="pAddress_lbl" styleClass="payee_address_lbl"/>
+      <Text layoutX="10.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuentas:"/>
+      <CheckBox fx:id="ch_acc_box" mnemonicParsing="false" text="Agregar Cuenta Corriente"/>
+      <Text layoutX="10.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo Cuenta Corriente:"/>
+      <TextField fx:id="ch_amount_fld" layoutX="10.0" layoutY="112.0"/>
+      <CheckBox fx:id="sv_acc_box" layoutX="10.0" layoutY="207.0" mnemonicParsing="false"
+                text="Agregar Cuenta Debito"/>
+      <Text layoutX="10.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo Cuenta Debito:"/>
+      <TextField fx:id="sv_amount_fld" layoutX="21.0" layoutY="492.0"/>
+      <Button fx:id="create_client_btn" mnemonicParsing="false" text="Crear Nuevo Cliente"/>
+      <Label fx:id="error_lbl" styleClass="error_lbl" text="error:"/>
+   </VBox>
+</AnchorPane>

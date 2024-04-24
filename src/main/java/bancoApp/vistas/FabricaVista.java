@@ -1,5 +1,6 @@
 package bancoApp.vistas;
 
+import bancoApp.controladores.admin.ControladorAdministrador;
 import bancoApp.controladores.cliente.ClienteControlador;
 import bancoApp.controladores.cliente.TransaccionesControlador;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,6 +16,9 @@ public class FabricaVista {
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
+
+    // Vista de administrador
+    private AnchorPane createClientView;
 
     public FabricaVista(){
         this.clientSelectedMenuItem = new SimpleStringProperty("");
@@ -60,6 +64,13 @@ public class FabricaVista {
         }
         return accountsView;
     }
+    /*  */
+    public void showAdminWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin/Admin.fxml"));
+        ControladorAdministrador controller = new ControladorAdministrador();
+        loader.setController(controller);
+        createStage(loader);
+    }
 
     public void showLoginWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
@@ -73,7 +84,8 @@ public class FabricaVista {
         createStage(loader);
         
     }
-
+    
+    
     private void createStage(FXMLLoader loader){
         Scene scene = null;
         try {
