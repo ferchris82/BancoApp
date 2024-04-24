@@ -13,7 +13,10 @@ public class ControladorAdministrador  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().addListener((observableValue, oldVal, newVal) ->{
-            //Agregar estructura switch
+            switch (newVal){
+                case CLIENTES -> admin_parent.setCenter(Modelo.getInstance().getFabricaVista().getClientsView());
+                default -> admin_parent.setCenter(Modelo.getInstance().getFabricaVista().getCreateClientView());
+            }
         });
     }
 }

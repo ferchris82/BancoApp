@@ -16,14 +16,20 @@ public class ControladorMenuAdministrador implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        
+        addListener();
     }
 
-    private void addListeners(){}
+    private void addListener(){
+        create_client_btn.setOnAction(actionEvent -> onCreateClient());
+        clients_btn.setOnAction(actionEvent -> onClients());
+    }
 
     private void onCreateClient(){
-        Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().set(MenuOpcionesAdmin.CLIENTES);
+        Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().set(MenuOpcionesAdmin.CREAR_CLIENTE);
     }
 
+    private void onClients(){
+        Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().set(MenuOpcionesAdmin.CLIENTES);
+    }
 
 }

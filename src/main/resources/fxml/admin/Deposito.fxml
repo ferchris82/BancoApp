@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../estilos/Deposito.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bancoApp.controladores.admin.ControladorDeposito">
+   <VBox layoutX="15.0" layoutY="90.0" prefHeight="570.0" prefWidth="820.0" AnchorPane.leftAnchor="15.0"
+         AnchorPane.topAnchor="100.0">
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="820.0" styleClass="search_box">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text"
+               text="Busquedad Por Dirección de Beneficiario:">
+            <font>
+               <Font name="Calibri Light" size="16.0"/>
+            </font>
+         </Text>
+         <TextField fx:id="pAddress_fld" styleClass="search_box"/>
+         <Button fx:id="search_btn" mnemonicParsing="false" text="Busqueda" textFill="WHITE">
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20"/>
+            </graphic>
+         </Button>
+      </HBox>
+      <ListView fx:id="result_listview" prefHeight="200.0" prefWidth="820.0" styleClass="search_box"/>
+      <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="315.0" prefWidth="100.0" styleClass="deposit_box">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Sección de Deposito">
+            <font>
+               <Font size="16.0"/>
+            </font>
+         </Text>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Monto:">
+            <font>
+               <Font size="16.0"/>
+            </font>
+         </Text>
+         <TextField fx:id="amount_fld"/>
+         <Button fx:id="deposit_btn" mnemonicParsing="false" text="Deposito" textFill="WHITE">
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="20"/>
+            </graphic>
+         </Button>
+      </VBox>
+   </VBox>
+</AnchorPane>

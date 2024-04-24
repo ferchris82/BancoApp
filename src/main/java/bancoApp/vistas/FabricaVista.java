@@ -22,6 +22,7 @@ public class FabricaVista {
     // Vista de administrador
     private final ObjectProperty<MenuOpcionesAdmin> adminSelectedMenuItem;
     private AnchorPane createClientView;
+    private AnchorPane clientsView;
 
     public FabricaVista(){
         this.loginAccountType = TipoDeCuenta.CLIENTE;
@@ -92,7 +93,18 @@ public class FabricaVista {
             }
         }
         return createClientView;
-    } 
+    }
+
+    public AnchorPane getClientsView(){
+        if (clientsView == null){
+            try{
+                clientsView = new FXMLLoader(getClass().getResource("/fxml/admin/Clientes.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return clientsView;
+    }
 
     public void showAdminWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin/Admin.fxml"));
