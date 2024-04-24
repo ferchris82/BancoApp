@@ -15,6 +15,7 @@ public class ControladorAdministrador  implements Initializable {
         Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().addListener((observableValue, oldVal, newVal) ->{
             switch (newVal){
                 case CLIENTES -> admin_parent.setCenter(Modelo.getInstance().getFabricaVista().getClientsView());
+                case DEPOSITO -> admin_parent.setCenter(Modelo.getInstance().getFabricaVista().getDepositView());
                 default -> admin_parent.setCenter(Modelo.getInstance().getFabricaVista().getCreateClientView());
             }
         });

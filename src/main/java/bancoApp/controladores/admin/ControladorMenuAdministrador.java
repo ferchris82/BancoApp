@@ -22,6 +22,7 @@ public class ControladorMenuAdministrador implements Initializable {
     private void addListener(){
         create_client_btn.setOnAction(actionEvent -> onCreateClient());
         clients_btn.setOnAction(actionEvent -> onClients());
+        deposit_btn.setOnAction(actionEvent -> onDeposit());
     }
 
     private void onCreateClient(){
@@ -30,6 +31,10 @@ public class ControladorMenuAdministrador implements Initializable {
 
     private void onClients(){
         Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().set(MenuOpcionesAdmin.CLIENTES);
+    }
+
+    private void onDeposit(){
+        Modelo.getInstance().getFabricaVista().getAdminSelectedMenuItem().set(MenuOpcionesAdmin.DEPOSITO);
     }
 
 }

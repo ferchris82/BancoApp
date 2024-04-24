@@ -23,6 +23,7 @@ public class FabricaVista {
     private final ObjectProperty<MenuOpcionesAdmin> adminSelectedMenuItem;
     private AnchorPane createClientView;
     private AnchorPane clientsView;
+    private AnchorPane depositView;
 
     public FabricaVista(){
         this.loginAccountType = TipoDeCuenta.CLIENTE;
@@ -104,6 +105,17 @@ public class FabricaVista {
             }
         }
         return clientsView;
+    }
+
+    public AnchorPane getDepositView(){
+        if (depositView == null){
+            try{
+                depositView = new FXMLLoader(getClass().getResource("/fxml/admin/Deposito.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return depositView;
     }
 
     public void showAdminWindow(){

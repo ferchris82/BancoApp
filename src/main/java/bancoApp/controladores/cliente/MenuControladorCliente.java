@@ -40,4 +40,5 @@ public class MenuControladorCliente implements Initializable {
     private void onAccounts(){
         Modelo.getInstance().getFabricaVista().getClientSelectedMenuItem().set(MenuOpcionesCliente.CUENTAS);
     }
+
 }
