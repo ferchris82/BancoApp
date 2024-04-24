@@ -1,6 +1,7 @@
 .main_menu_container {
     -fx-background-color: #EEEEEE;
     -fx-alignment: center;
+    -fx-padding: 0 10 0 10;
 }
 
 .left_container {
@@ -33,7 +34,7 @@
 }
 
 .menu_container Button {
-    -fx-pref-width: 115;
+    -fx-pref-width: 150;
     -fx-pref-height: 40;
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #132A13;
@@ -46,12 +47,12 @@
     -fx-cursor: hand;
 }
 
-.menu_container Button FontAwesomeIconView {
+.menu_container Button FontAwesomeIcon {
     -fx-fill: #132A13;
 }
 
 .alt_menu_btn {
-    -fx-pref-width: 115;
+    -fx-pref-width: 150;
     -fx-pref-height: 40;
     -fx-background-color: #132A13;
     -fx-text-fill: #FFFFFF;

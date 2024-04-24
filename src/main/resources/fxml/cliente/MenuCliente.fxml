@@ -6,52 +6,46 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
-      prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../estilos/MenuCliente.css"
-      xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bancoApp.controladores.cliente.MenuControladorCliente">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../estilos/MenuCliente.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bancoApp.controladores.cliente.MenuControladorCliente">
    <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
-      <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0"
-            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <FontAwesomeIconView glyphName="BANK" size="30"/>
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Banco App"/>
+      <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <FontAwesomeIconView glyphName="BANK" size="30" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Banco App" />
       </VBox>
-      <VBox prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0"
-            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
-         <Button fx:id="dashboard_btn" mnemonicParsing="false" prefWidth="152.0" text="Cuadro de Mando">
+      <VBox prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <Button fx:id="dashboard_btn" mnemonicParsing="false" prefWidth="150.0" text="Cuadro de Mando">
             <graphic>
-               <FontAwesomeIconView glyphName="HOME" size="20"/>
+               <FontAwesomeIconView glyphName="HOME" size="20" />
             </graphic>
          </Button>
          <Button fx:id="transaction_btn" mnemonicParsing="false" text="Transaccion">
             <graphic>
-               <FontAwesomeIconView glyphName="HANDSHAKE_ALT" size="20"/>
+               <FontAwesomeIconView glyphName="HANDSHAKE_ALT" size="20" />
             </graphic>
          </Button>
          <Button fx:id="accounts_btn" mnemonicParsing="false" text="Cuentas">
             <graphic>
-               <FontAwesomeIconView glyphName="ADDRESS_BOOK_ALT" size="20"/>
+               <FontAwesomeIconView glyphName="ADDRESS_BOOK_ALT" size="20" />
             </graphic>
          </Button>
-         <Line endX="120.0"/>
+         <Line endX="120.0" />
          <Button fx:id="profile_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Perfil">
             <graphic>
-               <FontAwesomeIconView glyphName="USER" size="20"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="USER" size="20" />
             </graphic>
          </Button>
          <Button fx:id="logout_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Salir">
             <graphic>
-               <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20"/>
+               <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
             </graphic>
          </Button>
       </VBox>
-      <VBox prefHeight="120.0" prefWidth="130.0" styleClass="report_container" AnchorPane.bottomAnchor="0.0"
-            AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="report_container"
-               text="Sugerencia de informe/Daño?"/>
-         <Label styleClass="report_container" text="Use esto para reportar cualquier daño"/>
+      <VBox prefHeight="120.0" prefWidth="130.0" styleClass="report_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="report_container" text="Sugerencia de informe/Daño?" />
+         <Label styleClass="report_container" text="Use esto para reportar cualquier daño" />
          <Button fx:id="report_btn" mnemonicParsing="false" styleClass="report_container" text="Reportar">
             <graphic>
-               <FontAwesomeIconView glyphName="PLUS"/>
+               <FontAwesomeIconView glyphName="PLUS" />
             </graphic>
          </Button>
       </VBox>
